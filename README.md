@@ -18,10 +18,11 @@ Team Profile Generator is a CLI application that allows the user to generate a H
 * `npm run test`
 
 ## Demo
-![Application screenshot](https://github.com/Lukesturgill/employee-tracker/blob/main/assets/html-screen-shot.png?raw=true)
+![Application screenshot](https://github.com/Lukesturgill/team-profile-generator/blob/main/assets/html-screen-shot.png?raw=true)
 
 ###
 * Video demo
+https://drive.google.com/file/d/1PnJPCEg9oTLUWbsEiOXFNAinymGCQpka/view
 
 
 ## Contribution
