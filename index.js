@@ -1,9 +1,10 @@
 const inquirer = require('inquirer');
-const template = require('.src/template');
+const template = require('./src/template');
+const writeFile = require('./src/writeFile')
 
-const Manager = require('.lib/manager');
-const Engineer = require('.lib/manager');
-const Intern = require('.lib/manager');
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
 
 var team = [];
 
