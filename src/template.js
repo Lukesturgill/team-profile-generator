@@ -25,17 +25,17 @@ const teamCards = teamArray => {
   // Manager card template
 const manager = managerData => {
     return `
-    <div class="manager">
+    <div class="employ-card">
       <div class="m-name">
         <h2>${managerData.name}</h2>
         <h3>Manager</h3>
       </div> 
-      <div class="m-info">
-        <ul class="m-list">
-          <li class="m-list-items">ID: ${managerData.id}</li>
-          <li class="m-list-items">Email: <a href="mailto:${managerData.email}">${managerData.email}</a></li>
-          <li class="m-list-items">Office Number: ${managerData.officeNumber}</li>
-        </ul>
+      <div class="info">
+        <div class="list">
+          <p class="list-items">ID: ${managerData.id}</p>
+          <p class="list-items">Email: <a href="mailto:${managerData.email}">${managerData.email}</a></p>
+          <p class="list-items">Office Number: ${managerData.officeNumber}</p>
+        </div>
       </div>
     </div>
   `;
@@ -44,19 +44,19 @@ const manager = managerData => {
   // Engineer card template
   const engineer = engineerData => {
     return `
-    <div class="engineer">
+    <div class="employ-card">
       <div class="e-name">
         <h2>${engineerData.name}</h2>
         <h3>Engineer</h3>
       </div> 
-      <div class="e-info">
-        <ul class="e-list">
-          <li class="e-list-items">ID: ${engineerData.id}</li>
-          <li class="e-list-items">Email: <a href="mailto:${engineerData.email}">${engineerData.email}</a></li>
-          <li class="e-list-items">GitHub:
-          <a href="https://www.github.com/${engineerData.github}" target="_blank">www.github.com/${engineerData.github}</a>
-          </li>
-        </ul>
+      <div class="info">
+        <div class="list">
+          <p class="list-items">ID: ${engineerData.id}</p>
+          <p class="list-items">Email: <a href="mailto:${engineerData.email}">${engineerData.email}</a></p>
+          <p class="list-items">GitHub:
+          <a href="https://www.github.com/${engineerData.github}" target="_blank">${engineerData.github}</a>
+          </p>
+        </div>
       </div>
     </div>
   `;
@@ -65,17 +65,17 @@ const manager = managerData => {
   // Intern card template
   const intern = internData => {
     return `
-    <div class="intern">
+    <div class="employ-card">
       <div class="i-name">
         <h2>${internData.name}</h2>
         <h3>Intern</h3>
       </div> 
-      <div class="i-info">
-        <ul class="i-list">
-          <li class="i-list-items">ID: ${internData.id}</li>
-          <li class="i-list-items">Email: <a href="mailto:${internData.email}">${internData.email}</a></li>
-          <li class="i-list-items">School: ${internData.school}</li>
-        </ul>
+      <div class="info">
+        <div class="list">
+          <p class="list-items">ID: ${internData.id}</p>
+          <p class="list-items">Email: <a href="mailto:${internData.email}">${internData.email}</a></p>
+          <p class="list-items">School: ${internData.school}</p>
+        </div>
       </div>
     </div>
   `;
@@ -96,7 +96,7 @@ const template = data => {
             <h1> My Team </h1>
           </div>
         </header>
-        <main class ="team-cards">
+        <main class ="team">
         ${teamCards(data)}
         </main>
       </body>
