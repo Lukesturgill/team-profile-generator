@@ -24,7 +24,7 @@ const teamCards = teamArray => {
   }
 
 // html page template
-const template = data => {
+const template = teamArray => {
     return `
     <!DOCTYPE html>
     <html>
@@ -39,7 +39,7 @@ const template = data => {
           </div>
         </header>
         <main class ="team-cards">
-        ${teamCards(data)}
+        ${teamCards(teamArray)}
         </main>
       </body>
     </html>
@@ -47,7 +47,7 @@ const template = data => {
   }
 
 const manager = managerData => {
-    return `
+    teamHtml+=`
     <div class="manager">
       <div class="m-name">
         <h2>${managerData.name}</h2>
@@ -61,12 +61,13 @@ const manager = managerData => {
         </ul>
       </div>
     </div>
-  `
+  `;
+    return teamCards;
   }
 
   // Engineer card template
   const engineer = engineerData => {
-    return `
+    teamHtml+=`
     <div class="engineer">
       <div class="e-name">
         <h2>${engineerData.name}</h2>
@@ -82,12 +83,13 @@ const manager = managerData => {
         </ul>
       </div>
     </div>
-  `
+  `;
+  return teamCards;
   }
 
   // Intern card template
   const intern = internData => {
-    return `
+    teamHtml+=`
     <div class="intern">
       <div class="i-name">
         <h2>${internData.name}</h2>
@@ -101,7 +103,8 @@ const manager = managerData => {
         </ul>
       </div>
     </div>
-  `
+  `;
+  return teamCards;
   }
 
   module.exports = template;
