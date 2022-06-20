@@ -34,7 +34,7 @@ const managerForm = () => {
         console.log(answers);
         manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
         team.push(manager);
-        returnTOMenu()
+        returnToMenu()
     })
         .catch(err => {
 		console.log(err);
@@ -68,7 +68,7 @@ const engineerForm = () => {
         console.log(answers);
         engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.githubUser);
         team.push(engineer);
-        returnTOMenu()
+        returnToMenu()
     })
         .catch(err => {
 		console.log(err);
@@ -102,9 +102,27 @@ const internForm = () => {
         console.log(answers);
         intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
         team.push(intern);
-        returnTOMenu()
+        returnToMenu()
     })
         .catch(err => {
 		console.log(err);
 	});
+};
+
+const returnToMenu = () => {
+    return inquirer.prompt([
+        {
+            type: 'list',
+            name: 'select',
+            message: 'What would you like to do?',
+            choices: ['Add new employee', 'Exit']
+        }
+    ])
+    .then(selection => {
+        if(selection.select === 'Add new employee'){
+            addNewEmployee();
+        } else {
+            console.log('Youre all set!');
+        }
+    });
 };
