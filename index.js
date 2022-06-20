@@ -71,17 +71,17 @@ const internForm = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'name',
+            name: 'internName',
             message: 'What is the interns name?'
         },
         {
             type: 'input',
-            name: 'id',
+            name: 'internId',
             message: 'What is the interns employee ID number?'
         },
         {
             type: 'input',
-            name: 'email',
+            name: 'internEmail',
             message: 'What is the interns email?'
         },
         {

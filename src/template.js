@@ -9,13 +9,13 @@ const teamCards = teamArray => {
     var teamData = JSON.parse(teamArray);
     console.log(teamData);
     for ( i = 0; i < teamData.length; i++ ) {
-      if (teamData[i].type === "Manager"){
+      if (teamData[i].type === "manager"){
         teamHtml = teamHtml + manager(teamData[i])
       }
       if (teamData[i].type === "Engineer"){
         teamHtml = teamHtml + engineer(teamData[i])
       }
-      if (teamData[i].type === "Intern"){
+      if (teamData[i].type === "intern"){
         teamHtml = teamHtml + intern(teamData[i])
       }
     } 
