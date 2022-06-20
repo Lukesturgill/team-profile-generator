@@ -4,7 +4,6 @@ const template = require('.src/template');
 const Manager = require('.lib/manager');
 const Engineer = require('.lib/manager');
 const Intern = require('.lib/manager');
-const Employee = require('.lib/manager');
 
 var team = [];
 
@@ -27,11 +26,20 @@ const managerForm = () => {
         },
         {
             type: 'input',
-            name: 'mOfficeNumber',
+            name: 'officeNumber',
             message: 'What is the managers office number?'
         }
     ])
-};
+    .then(answers => {
+        console.log(answers);
+        manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
+        team.push(manager);
+        returnTOMenu()
+    })
+        .catch(err => {
+		console.log(err);
+	});
+}
 
 const engineerForm = () => {
     return inquirer.prompt([
@@ -52,10 +60,19 @@ const engineerForm = () => {
         },
         {
             type: 'input',
-            name: 'eOfficeNumber',
-            message: 'What is the engineers office number?'
+            name: 'githubUser',
+            message: 'What is the engineers GitHub username?'
         }
     ])
+    .then(answers => {
+        console.log(answers);
+        engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.githubUser);
+        team.push(engineer);
+        returnTOMenu()
+    })
+        .catch(err => {
+		console.log(err);
+	});
 };
 
 const internForm = () => {
@@ -77,8 +94,17 @@ const internForm = () => {
         },
         {
             type: 'input',
-            name: 'iOfficeNumber',
-            message: 'What is the interns office number?'
+            name: 'internSchool',
+            message: 'What school does the intern attend?'
         }
     ])
+    .then(answers => {
+        console.log(answers);
+        intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+        team.push(intern);
+        returnTOMenu()
+    })
+        .catch(err => {
+		console.log(err);
+	});
 };
