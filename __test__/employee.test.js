@@ -1,4 +1,4 @@
-const Employee = require ('../lib/eployee');
+const Employee = require ('../lib/employee');
 
 test('creates employee object', () => {
     const employee = new Employee('name', 'id', 'email');
