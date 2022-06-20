@@ -30,15 +30,6 @@ const managerForm = () => {
             message: 'What is the managers office number?'
         }
     ])
-    .then(answers => {
-        console.log(answers);
-        manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
-        team.push(manager);
-        returnToMenu()
-    })
-        .catch(err => {
-		console.log(err);
-	});
 }
 
 const engineerForm = () => {
@@ -123,6 +114,37 @@ const returnToMenu = () => {
             addNewEmployee();
         } else {
             console.log('Youre all set!');
+            writeFile(template(JSON.stringify(team)));
         }
     });
 };
+
+const addNewEmployee = () => {
+    return inquirer.prompt ([
+        {
+            type: 'list',
+            name: 'employeeRole',
+            message: 'Which role does the employee have?',
+            choices: ['Engineer', 'Intern']
+        }
+    ])
+    .then(answer => {
+        console.log(answer.employeeRole);
+        if(answer.employeeRole === 'Engineer') {
+            engineerForm();
+        }else if (answer.employeeRole === 'Intern'){
+            internForm();
+        }
+    });
+};
+
+managerForm()
+    .then(answers => {
+         console.log(answers);
+         manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
+         team.push(manager);
+    returnToMenu();
+})
+    .catch(err => {
+        console.log(err);
+});
