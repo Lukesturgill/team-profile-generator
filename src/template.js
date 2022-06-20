@@ -3,9 +3,8 @@ const Manager = require("../lib/manager");
 const Intern = require("../lib/intern");
 
 // Generate team member cards
-let teamHtml = '';
-
 const teamCards = teamArray => {
+    let teamHtml = '';
     console.log(teamArray + 'sTRING');
     var teamData = JSON.parse(teamArray);
     console.log(teamData);
@@ -23,31 +22,9 @@ const teamCards = teamArray => {
     return teamHtml;
   }
 
-// html page template
-const template = teamArray => {
-    return `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Team Profile</title>
-        <link rel="stylesheet" href="./style.css"> <source src="./template.js" type="template">
-      </head>
-      <body>
-        <header class="header">
-          <div class="title">
-            <h1> My Team </h1>
-          </div>
-        </header>
-        <main class ="team-cards">
-        ${teamCards(teamArray)}
-        </main>
-      </body>
-    </html>
-  `
-  }
-
+  // Manager card template
 const manager = managerData => {
-    teamHtml+=`
+    return `
     <div class="manager">
       <div class="m-name">
         <h2>${managerData.name}</h2>
@@ -62,12 +39,11 @@ const manager = managerData => {
       </div>
     </div>
   `;
-    return teamCards;
   }
 
   // Engineer card template
   const engineer = engineerData => {
-    teamHtml+=`
+    return `
     <div class="engineer">
       <div class="e-name">
         <h2>${engineerData.name}</h2>
@@ -84,12 +60,11 @@ const manager = managerData => {
       </div>
     </div>
   `;
-  return teamCards;
   }
 
   // Intern card template
   const intern = internData => {
-    teamHtml+=`
+    return `
     <div class="intern">
       <div class="i-name">
         <h2>${internData.name}</h2>
@@ -104,7 +79,28 @@ const manager = managerData => {
       </div>
     </div>
   `;
-  return teamCards;
   }
 
+  // html page template
+const template = data => {
+    return `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Team Profile</title>
+        <link rel="stylesheet" href="./style.css"> <source src="./template.js" type="template">
+      </head>
+      <body>
+        <header class="header">
+          <div class="title">
+            <h1> My Team </h1>
+          </div>
+        </header>
+        <main class ="team-cards">
+        ${teamCards(data)}
+        </main>
+      </body>
+    </html>
+  `
+  }
   module.exports = template;
