@@ -1,3 +1,7 @@
+const Engineer = require("../lib/engineer");
+const Manager = require("../lib/manager");
+const Intern = require("../lib/intern");
+
 // Generate team member cards
 let teamHtml = '';
 
@@ -46,14 +50,14 @@ const manager = managerData => {
     return `
     <div class="manager">
       <div class="m-name">
-        <h2>${managerData.getName()}</h2>
+        <h2>${managerData.name}</h2>
         <h3>Manager</h3>
       </div> 
       <div class="m-info">
         <ul class="m-list">
-          <li class="m-list-items">ID: ${managerData.getId()}</li>
-          <li class="m-list-items">Email: <a href="mailto:${managerData.getEmail()}">${managerData.getEmail()}</a></li>
-          <li class="m-list-items">Office Number: ${managerData.getOffice()}</li>
+          <li class="m-list-items">ID: ${managerData.id}</li>
+          <li class="m-list-items">Email: <a href="mailto:${managerData.email}">${managerData.email}</a></li>
+          <li class="m-list-items">Office Number: ${managerData.officeNumber}</li>
         </ul>
       </div>
     </div>
@@ -65,15 +69,15 @@ const manager = managerData => {
     return `
     <div class="engineer">
       <div class="e-name">
-        <h2>${engineerData.getName()}</h2>
+        <h2>${engineerData.name}</h2>
         <h3>Engineer</h3>
       </div> 
       <div class="e-info">
         <ul class="e-list">
-          <li class="e-list-items">ID: ${engineerData.getId()}</li>
-          <li class="e-list-items">Email: <a href="mailto:${engineerData.getEmail()}">${engineerData.getEmail()}</a></li>
+          <li class="e-list-items">ID: ${engineerData.id}</li>
+          <li class="e-list-items">Email: <a href="mailto:${engineerData.email}">${engineerData.email}</a></li>
           <li class="e-list-items">GitHub:
-          <a href="https://www.github.com/${engineerData.getGitHub()}" target="_blank">www.github.com/${engineerData.getGitHub()}</a>
+          <a href="https://www.github.com/${engineerData.github}" target="_blank">www.github.com/${engineerData.github}</a>
           </li>
         </ul>
       </div>
@@ -86,14 +90,14 @@ const manager = managerData => {
     return `
     <div class="intern">
       <div class="i-name">
-        <h2>${internData.getName()}</h2>
+        <h2>${internData.name}</h2>
         <h3>Intern</h3>
       </div> 
       <div class="i-info">
         <ul class="i-list">
-          <li class="i-list-items">ID: ${internData.getId()}</li>
-          <li class="i-list-items">Email: <a href="mailto:${internData.getEmail()}">${internData.getEmail()}</a></li>
-          <li class="i-list-items">School: ${internData.getSchool()}</li>
+          <li class="i-list-items">ID: ${internData.id}</li>
+          <li class="i-list-items">Email: <a href="mailto:${internData.email}">${internData.email}</a></li>
+          <li class="i-list-items">School: ${internData.school}</li>
         </ul>
       </div>
     </div>

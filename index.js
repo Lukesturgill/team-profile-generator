@@ -12,17 +12,17 @@ const managerForm = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'managerName',
+            name: 'name',
             message: 'What is the managers name?'
         },
         {
             type: 'input',
-            name: 'managerId',
+            name: 'id',
             message: 'What is the managers employee ID number?'
         },
         {
             type: 'input',
-            name: 'managerEmail',
+            name: 'email',
             message: 'What is the managers email?'
         },
         {
@@ -37,17 +37,17 @@ const engineerForm = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'engineerName',
+            name: 'name',
             message: 'What is the engineers name?'
         },
         {
             type: 'input',
-            name: 'engineerId',
+            name: 'id',
             message: 'What is the engineers employee ID number?'
         },
         {
             type: 'input',
-            name: 'engineerEmail',
+            name: 'email',
             message: 'What is the engineers email?'
         },
         {
@@ -71,17 +71,17 @@ const internForm = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'internName',
+            name: 'name',
             message: 'What is the interns name?'
         },
         {
             type: 'input',
-            name: 'internId',
+            name: 'id',
             message: 'What is the interns employee ID number?'
         },
         {
             type: 'input',
-            name: 'internEmail',
+            name: 'email',
             message: 'What is the interns email?'
         },
         {
